@@ -2,8 +2,9 @@ import br.com.minhaempresa.model.Movie;
 
 public class Main {
     public static void main(String[] args) {
-        Movie movie1 = new Movie();
-
+        Movie movie1 = new Movie("O Pirata do Caribe", 2000, 180, false);
+        
+        movie1.showMovieInformations();
         movie1.setName("Os Piratas do Caribe");
         movie1.setYearReleased(2005);
         movie1.setIncluded(true);

@@ -6,6 +6,13 @@ public class Movie {
     private int yearReleased, numOfRating=0, movieLength;
     private double sumOfRating=0;
 
+    public Movie(String name, int yearReleased, int movieLength, boolean includedInThePlan) {
+        this.name = name;
+        this.includedInThePlan = includedInThePlan;
+        this.yearReleased = yearReleased;
+        this.movieLength = movieLength;
+    }
+
     public String getName() {
         return name;
     }
