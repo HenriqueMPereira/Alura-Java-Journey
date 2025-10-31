@@ -1,4 +1,5 @@
 import io.github.henriquempereira.exercicio3b.model.Carro;
+import io.github.henriquempereira.exercicio3b.model.ContaCorrente;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,5 +12,15 @@ public class Main {
         carro1.calculaExibeMenor();
         carro1.setTipoDeMotor("combustão");
         carro1.mostraInformacao();
+
+
+        ContaCorrente cc = new ContaCorrente();
+        cc.consultarSaldo();
+        cc.sacar(50);
+        cc.depositar(100);
+        cc.sacar(25);
+        cc.consultarSaldo();
+        cc.cobrarTarifaMensal(25);
+        cc.consultarSaldo();
     }
 }
