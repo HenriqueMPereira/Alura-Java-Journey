@@ -23,4 +23,9 @@ public class Movie extends Title implements Classificable {
             return 3;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Filme: " + this.getsName() + " tem " + this.getiDurationTime() + " minutos e é de " + this.getiReleaseDate() + ".";
+    }
 }
