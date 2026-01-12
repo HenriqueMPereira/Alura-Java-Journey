@@ -52,4 +52,9 @@ public class Title {
     public double getdMedia(){
         return (getdRating()/this.iNumberOfReviews);
     }
+
+    @Override
+    public String toString() {
+        return "Filme: " + this.sName + " tem " + this.iDurationTime + " minutos e é de " + this.iReleaseDate + ".";
+    }
 }
