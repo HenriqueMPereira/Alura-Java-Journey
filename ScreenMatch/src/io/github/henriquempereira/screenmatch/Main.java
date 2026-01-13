@@ -9,9 +9,7 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Movie filme1 = new Movie();
-        filme1.setsName("O Sexto Sentido");
-        filme1.setiDurationTime(107);
+        Movie filme1 = new Movie("O Sexto Sentido", 1999, 107);
 
         // Avaliando filme para ter uma média que será usada para testar o interface e classe filter
         filme1.setdRating(10);
@@ -21,13 +19,9 @@ public class Main {
         RecommendationFilter filter = new RecommendationFilter();
         filter.filter(filme1);
 
-        Movie filme2 = new Movie();
-        filme2.setsName("O Silêncio dos Inocentes");
-        filme2.setiDurationTime(118);
+        Movie filme2 = new Movie("O Silêncio dos Inocentes", 1991, 118);
 
-        var filme3 = new Movie();
-        filme3.setsName("Clube da Luta");
-        filme3.setiDurationTime(139);
+        var filme3 = new Movie("Clube da Luta", 1999, 139);
 
         ArrayList listFilmes = new ArrayList();
         // ou var listFilmes = new ArrayList();

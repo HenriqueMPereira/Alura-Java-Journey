@@ -5,6 +5,10 @@ import io.github.henriquempereira.screenmatch.service.Classificable;
 public class Movie extends Title implements Classificable {
     private String sDirector;
 
+    public Movie(String sName, int iReleaseDate, int iDurationTime) {
+        super(sName, iReleaseDate, iDurationTime);
+    }
+
     public String getsDirector() {
         return sDirector;
     }

@@ -7,6 +7,10 @@ public class Series extends Title implements Classificable {
     private int iNumberOfEpisodes;
     private int iDurationOfEpisode;
 
+    public Series(String sName, int iReleaseDate, int iDurationTime) {
+        super(sName, iReleaseDate, iDurationTime);
+    }
+
     public int getiNumberOfSeasons() {
         return iNumberOfSeasons;
     }
