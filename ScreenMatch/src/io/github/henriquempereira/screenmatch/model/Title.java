@@ -8,10 +8,9 @@ public class Title {
     private int iNumberOfReviews;
     private int iNumberOfViews;
 
-    public Title(String sName, int iReleaseDate, int iDurationTime) {
+    public Title(String sName, int iReleaseDate) {
         this.sName = sName;
         this.iReleaseDate = iReleaseDate;
-        this.iDurationTime = iDurationTime;
     }
 
     public String getsName() {
@@ -28,6 +27,10 @@ public class Title {
 
     public int getiDurationTime() {
         return iDurationTime;
+    }
+
+    public void setiDurationTime(int iDurationTime) {
+        this.iDurationTime = iDurationTime;
     }
 
     public double getdRating() {

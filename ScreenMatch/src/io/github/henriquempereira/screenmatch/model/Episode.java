@@ -5,8 +5,8 @@ public class Episode extends Title {
     private Series series;
     private int iNumberOfViews;
 
-    public Episode(String sName, int iReleaseDate, int iDurationTime) {
-        super(sName, iReleaseDate, iDurationTime);
+    public Episode(String sName, int iReleaseDate) {
+        super(sName, iReleaseDate);
     }
 
     public Series getSeries() {

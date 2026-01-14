@@ -5,8 +5,8 @@ import io.github.henriquempereira.screenmatch.service.Classificable;
 public class Movie extends Title implements Classificable {
     private String sDirector;
 
-    public Movie(String sName, int iReleaseDate, int iDurationTime) {
-        super(sName, iReleaseDate, iDurationTime);
+    public Movie(String sName, int iReleaseDate) {
+        super(sName, iReleaseDate);
     }
 
     public String getsDirector() {
@@ -30,6 +30,6 @@ public class Movie extends Title implements Classificable {
 
     @Override
     public String toString() {
-        return "Filme: " + this.getsName() + " tem " + this.getiDurationTime() + " minutos e é de " + this.getiReleaseDate() + ".";
+        return "Filme: " + this.getsName() + " tem " + this.getiDurationTime() + " minutos e é de " + this.getiReleaseDate();
     }
 }
