@@ -5,6 +5,7 @@ import io.github.henriquempereira.screenmatch.model.Series;
 import io.github.henriquempereira.screenmatch.service.RecommendationFilter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -33,5 +34,8 @@ public class Main {
         watchedList.add(movie3);
 
         System.out.println(watchedList); // Mudança do toString() como proposto pelo professor
+
+        Collections.sort(watchedList);
+        System.out.println("A lista de filmes ordenada é: " + watchedList);
     }
 }

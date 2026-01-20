@@ -1,6 +1,6 @@
 package io.github.henriquempereira.screenmatch.model;
 
-public class Title {
+public class Title implements Comparable<Title>{
     private String sName;
     private int iReleaseDate;
     private int iDurationTime;
@@ -48,5 +48,10 @@ public class Title {
 
     public double getdMedia(){
         return (getdRating()/this.iNumberOfReviews);
+    }
+
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.sName.compareTo(otherTitle.getsName());
     }
 }
