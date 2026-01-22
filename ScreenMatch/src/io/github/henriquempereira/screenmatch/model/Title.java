@@ -1,5 +1,7 @@
 package io.github.henriquempereira.screenmatch.model;
 
+import io.github.henriquempereira.screenmatch.exception.LengthYearException;
+
 public class Title implements Comparable<Title>{
     private String sName;
     private int iReleaseDate;
@@ -15,6 +17,9 @@ public class Title implements Comparable<Title>{
 
     public Title(TitleOmdb tituloOmdb) {
         this.sName = tituloOmdb.Title();
+        if(tituloOmdb.Year().length() > 4){
+            throw new LengthYearException("Erro ao converter ano, pois o tamanho do ano é maior que 4");
+        }
         this.iReleaseDate = Integer.valueOf(tituloOmdb.Year());
     }
 
@@ -64,6 +69,7 @@ public class Title implements Comparable<Title>{
     @Override
     public String toString() {
         return "Nome: " + this.sName +
-                "\nAno de lançamento: " + this.iReleaseDate;
+                "\nAno de lançamento: " + this.iReleaseDate +
+                "\n";
     }
 }
