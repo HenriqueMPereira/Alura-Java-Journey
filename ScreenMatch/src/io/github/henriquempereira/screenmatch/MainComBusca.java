@@ -1,10 +1,12 @@
 package io.github.henriquempereira.screenmatch;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import io.github.henriquempereira.screenmatch.exception.LengthYearException;
 import io.github.henriquempereira.screenmatch.model.Title;
 import io.github.henriquempereira.screenmatch.model.TitleOmdb;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -21,7 +23,10 @@ public class MainComBusca {
 
         Scanner scanner = new Scanner(System.in);
         List<Title> listaDeTitulos = new ArrayList<>();
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+        FileWriter fileWriter = new FileWriter("titulos.txt");
 
         String opcao = "";
 
@@ -57,5 +62,7 @@ public class MainComBusca {
             }
         }
 
+        fileWriter.write(gson.toJson(listaDeTitulos));
+        fileWriter.close();
     }
 }
