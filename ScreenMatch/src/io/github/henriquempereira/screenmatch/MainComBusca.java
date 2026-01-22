@@ -1,5 +1,9 @@
 package io.github.henriquempereira.screenmatch;
 
+import com.google.gson.Gson;
+import io.github.henriquempereira.screenmatch.model.Title;
+import io.github.henriquempereira.screenmatch.model.TitleOmdb;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,5 +28,11 @@ public class MainComBusca {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         System.out.println(response.body());
+
+        Gson gson = new Gson();
+        TitleOmdb tituloOmdb = gson.fromJson(response.body(), TitleOmdb.class);
+        Title titulo = new Title(tituloOmdb);
+        System.out.println(titulo);
+
     }
 }
