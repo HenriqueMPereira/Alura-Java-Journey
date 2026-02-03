@@ -3,8 +3,9 @@ package io.github.henriquempereira.screenmatch.model;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record SeriesData(@JsonAlias("Title") String title,
-                         @JsonAlias("imdbRating") String rating,
-                         @JsonAlias("totalSeasons") Integer numberOfSeasons) {
+public record SeasonData(@JsonAlias("Season") String season,
+                         @JsonAlias("Episodes") List<EpisodeData> episodes) {
 }
