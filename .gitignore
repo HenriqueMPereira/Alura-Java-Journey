@@ -1,13 +1,28 @@
-# IntelliJ
+# --- IDE (IntelliJ) ---
 .idea/
 *.iml
 *.iws
 
-# Compilação e Binários (o que o Java gera sozinho)
+# --- Compilação e Build (Java/Maven) ---
+# Onde o Java puro coloca os arquivos compilados
 out/
+bin/
+# Onde o Maven/Spring Boot coloca o projeto compilado
 target/
 *.class
 
-# Outros arquivos de sistema
+# --- Logs e Arquivos Temporários ---
+# Logs de erro que vimos no seu repositório
+*.log
+hs_err_pid*
+replay_pid*
+
+# --- Maven Wrapper ---
+# Se você prefere não subir os binários do Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# --- Sistema Operacional ---
 .DS_Store
 Thumbs.db
