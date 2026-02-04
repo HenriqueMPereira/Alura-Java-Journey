@@ -1,0 +1,13 @@
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Compilação e Binários (o que o Java gera sozinho)
+out/
+target/
+*.class
+
+# Outros arquivos de sistema
+.DS_Store
+Thumbs.db
