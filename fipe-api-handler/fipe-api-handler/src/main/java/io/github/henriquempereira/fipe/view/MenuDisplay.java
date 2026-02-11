@@ -1,9 +1,7 @@
 package io.github.henriquempereira.fipe.view;
 
-import io.github.henriquempereira.fipe.model.Brand;
+import io.github.henriquempereira.fipe.model.Data;
 import io.github.henriquempereira.fipe.services.FipeClient;
-
-import java.io.IOException;
 
 import java.util.List;
 import java.util.Scanner;
@@ -28,12 +26,14 @@ public class MenuDisplay {
             switch (userChoice.toUpperCase()) {
                 case "CARRO":
                     System.out.println("VOCÊ ESCOLHEU CARRO!");
-                    List<Brand> brandList = fipeClient.fetchDataType("carros");
+                    List<Data> brandList = fipeClient.fetchDataType("carros");
                     brandList.forEach(brand -> System.out.println("Marca: " +
-                                    brand.brandName() + " -> Código: " + brand.brandCode()));
-                    System.out.println("Agora escolha o código da marca que você deseja:");
+                                    brand.dataName() + " -> Código: " + brand.dataCode()));
+                    System.out.println("Escolha o código da marca que você deseja:");
                     userChoice = scanner.nextLine();
-
+                    fipeClient.fetchDataModel("carros", userChoice).forEach(model ->
+                            System.out.println("Modelo: " + model.dataName() + " -> " +
+                                    "Código: " + model.dataCode()));
                     break;
 //                case "CAMINHÃO":
 //                    System.out.println("VOCÊ ESCOLHEU CAMINHÃO!");

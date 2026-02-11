@@ -2,8 +2,10 @@ package io.github.henriquempereira.fipe.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.henriquempereira.fipe.model.Brand;
+import io.github.henriquempereira.fipe.model.Data;
+import io.github.henriquempereira.fipe.model.VehicleModels;
 
 import java.io.IOException;
 import java.net.URI;
@@ -36,10 +38,20 @@ public class FipeClient {
         }
     }
 
-    public List<Brand> fetchDataType(String typeOfVehicle) {
+    public List<Data> fetchDataType(String typeOfVehicle) {
         String json = fetchData(BASE_URL + typeOfVehicle + "/marcas");
         try {
-            return mapper.readValue(json, new TypeReference<List<Brand>>() {});
+            return mapper.readValue(json, new TypeReference<List<Data>>() {});
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Data> fetchDataModel(String typeOfVehicle ,String modelOfVehicle) throws RuntimeException {
+        String json = fetchData(BASE_URL + typeOfVehicle + "/marcas/" + modelOfVehicle + "/modelos");
+        try {
+            VehicleModels response = mapper.readValue(json, VehicleModels.class);
+            return response.models();
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
